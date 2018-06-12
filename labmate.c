@@ -21,7 +21,10 @@ int read_student_list()
 	char * b ;
 	int i ; 
 
-	fp = fopen("students.txt", "r") ; //TODO: allow a user can give a different file name as an argument.
+	char *inputfile=malloc(sizeof(char)*128);
+	
+	scanf("%s",inputfile);
+	fp = fopen(inputfile, "r") ; //TODO: allow a user can give a different file name as an argument.
 	while (feof(fp) == 0) {
 		if (fscanf(fp, "%d", &(students[n_students])) == 1)
 			n_students++ ;
